@@ -1,5 +1,9 @@
 import "./App.scss";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import { AuthProvider } from "./components/auth-page";
 import Root from "./components/root";
 import { TH } from "./components/th";
@@ -18,7 +22,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <Root />,
+    element: <Navigate to="/th/login" />,
   },
 ]);
 

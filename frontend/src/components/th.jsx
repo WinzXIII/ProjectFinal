@@ -1,3 +1,4 @@
+import { Navigate } from "react-router-dom";
 import Login from "./TH/Login/Login";
 import Home from "./TH/Home/Home";
 import Information from "./TH/Home/Infomation/Information";
@@ -9,7 +10,6 @@ import HumanResource from "./TH/Home/HumanResource/HumanResource";
 import Move from "./TH/Home/Move/Move";
 import Settings from "./TH/Home/Settings/Settings";
 import Form from "./TH/Home/Form/Form";
-import { Navigate } from "react-router-dom";
 
 export const TH = [
   {

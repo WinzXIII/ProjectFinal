@@ -67,7 +67,7 @@ const Home = () => {
 
   return (
     <div className="container">
-      {!user?.codeID && <Navigate to="/th/login" />}
+      {!user && !user?.codeID && <Navigate to="/th/login" />}
       {/* Nav-Top */}
       <div className="nav-bar">
         <ul>

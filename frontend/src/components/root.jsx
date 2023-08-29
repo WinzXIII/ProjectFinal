@@ -2,12 +2,13 @@ import { Outlet, Navigate, useLocation } from "react-router-dom";
 
 const Root = () => {
   const location = useLocation();
+  const path = location.pathname.split("/");
+
+  console.log(path)
 
   return (
     <>
       <div>
-        {!location.pathname.startsWith("/th") &&
-          !location.pathname.startsWith("/en") && <Navigate to="/th/login" />}
         <Outlet />
       </div>
     </>

@@ -1,3 +1,4 @@
+import { Navigate } from "react-router-dom";
 import Login from "./EN/Login/Login";
 import Home from "./EN/Home/Home";
 import Information from "./EN/Home/Infomation/Information";
@@ -25,4 +26,8 @@ export const EN = [
       },
     ],
   },
+  {
+    path: "*",
+    element: <Navigate to="/en/login" />
+  }
 ];
