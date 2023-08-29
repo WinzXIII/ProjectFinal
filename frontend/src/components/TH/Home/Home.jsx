@@ -1,5 +1,5 @@
 import "./Home.scss";
-import { Outlet, NavLink, useNavigate, useLocation } from "react-router-dom";
+import { Outlet, NavLink, useNavigate, useLocation, Navigate } from "react-router-dom";
 import { BiLogOut } from "react-icons/bi";
 import { useAuth } from "../../auth-page";
 import Logo from "../../../assets/picture/LogoNav.png";
@@ -67,6 +67,7 @@ const Home = () => {
 
   return (
     <div className="container">
+      {!user?.codeID && <Navigate to="/th/login" />}
       {/* Nav-Top */}
       <div className="nav-bar">
         <ul>
@@ -74,7 +75,10 @@ const Home = () => {
             <img src={Logo} alt="Logo" width="180px" />
           </li>
           <div className="nav-between">
-            <li className="nav-language" onClick={() => navigate(`/en/${user.codeID}/${path[3]}`)}>
+            <li
+              className="nav-language"
+              onClick={() => navigate(`/en/${user.codeID}/${path[3]}`)}
+            >
               <div className="nav-button">
                 <img src={TH} alt="TH" width="30px" />
                 TH

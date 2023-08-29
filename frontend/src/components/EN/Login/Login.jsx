@@ -13,7 +13,7 @@ const Login = () => {
   const [password, setPassword] = React.useState("");
   const navigate = useNavigate();
   const auth = useAuth();
-
+  
   const Login = () => {
     const user = Person.find((user) => user.codeID === username);
     const usernameEl = document.querySelector(".user");
@@ -49,7 +49,7 @@ const Login = () => {
       <nav>
         <ul>
           <li>
-            <a href={`/th`}>
+            <a href={`/th/login`}>
               <img src={EN} alt="EN" width="30px" />
               EN
             </a>

@@ -9,6 +9,7 @@ import HumanResource from "./TH/Home/HumanResource/HumanResource";
 import Move from "./TH/Home/Move/Move";
 import Settings from "./TH/Home/Settings/Settings";
 import Form from "./TH/Home/Form/Form";
+import { Navigate } from "react-router-dom";
 
 export const TH = [
   {
@@ -57,4 +58,8 @@ export const TH = [
       },
     ],
   },
+  {
+    path: "*",
+    element: <Navigate to="/th/login" />
+  }
 ];

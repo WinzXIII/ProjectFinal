@@ -49,7 +49,7 @@ const Login = () => {
       <nav>
         <ul>
           <li>
-            <a href={`/en`}>
+            <a href={`/en/login`}>
               <img src={TH} alt="TH" width="30px" />
               TH
             </a>
