@@ -12,10 +12,10 @@ const Home = () => {
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    if(user === null) {
-      navigate("/th/login")
+    if (user === null) {
+      navigate("/th/login");
     }
-  }, [])
+  }, []);
 
   const NavMenu = [
     {
@@ -67,54 +67,61 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <div className="home-nav-slide">
-        <div className="nav-slide-logo">
-          <img src={Logo} alt="logo" />
+      <div className="home-content">
+        <div className="home-nav">
+          <div className="home-nav-logo">
+            <img src={Logo} alt="logo" />
+          </div>
+          <div className="home-nav-menu">
+            <a href="" className="home-menu-language">
+              <img src={TH} alt="TH" width="25px" />
+              TH
+            </a>
+            <a href="/th/login" className="home-menu-logout">
+              <BiLogOut size="25px" />
+              Logout
+            </a>
+          </div>
         </div>
-
-        <div className="nav-slide-img">
-          <img src={user?.img} alt="image" />
+        <div className="home-data">
+          <div className="home-data-nav">
+            <div className="home-nav-content">
+              <div className="home-nav-img">
+                <img src={user?.img} alt="user" />
+              </div>
+              <div className="home-nav-text">
+                <p>รหัสพนักงาน​ : {user?.codeID}</p>
+                <p>ชื่อ : {user?.name}</p>
+                <p>ตำแหน่ง : {user?.position}</p>
+              </div>
+              <div className="home-nav-page">
+                {NavMenu.map(
+                  (item, index) =>
+                    item.setting.includes(user?.setting) && (
+                      <NavLink
+                        key={index}
+                        to={item.path}
+                        className={({ isPending, isActive }) =>
+                          isPending
+                            ? "home-page-menu pending"
+                            : isActive
+                            ? "home-page-menu active"
+                            : "home-page-menu"
+                        }
+                      >
+                        {item.name}
+                      </NavLink>
+                    )
+                )}
+              </div>
+            </div>
+          </div>
+          <div className="home-data-content">
+            <div className="home-content-container">
+              <Outlet />
+            </div>
+          </div>
         </div>
-
-        <div className="nav-slide-user">
-          <p>รหัสพนักงาน: {user?.codeID}</p>
-          <p>{user?.name}</p>
-          <p>ตำแหน่ง: {user?.position}</p>
-        </div>
-
-        <div className="nav-slide-menu">
-          {NavMenu.map(
-            (item, index) =>
-              item.setting.includes(user?.setting) && (
-                <NavLink
-                  key={index}
-                  to={item.path}
-                  className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "link active" : "link"
-                  }
-                >
-                  {item.name}
-                </NavLink>
-              )
-          )}
-        </div>
-      </div>
-      <div className="home-box">
-        <div className="home-nav-top">
-          <a href="" className="home-nav-language">
-            <img src={TH} alt="TH" width="30" />
-            TH
-          </a>
-          <a href="/th/login" className="home-nav-logout">
-            <BiLogOut size="25px" />
-            ออกจากระบบ
-          </a>
-        </div>
-        <div className="home-content">
-          <div className="home-content-data">
-          <Outlet />
-          </div>  
-        </div>  
       </div>
     </div>
   );

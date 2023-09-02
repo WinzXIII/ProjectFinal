@@ -4,7 +4,9 @@ const Move = () => {
   return (
     <div className="move-container">
       <div className="move-content">
-        <div className="move-title">ย้ายแผนก</div>
+        <div className="move-title">
+          <p>ย้ายแผนก</p>
+        </div>
       </div>
     </div>
   );

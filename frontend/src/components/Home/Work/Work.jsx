@@ -4,7 +4,9 @@ const Work = () => {
   return (
     <div className="work-container">
       <div className="work-content">
-        <div className="work-title">กรอกภาระงาน</div>
+        <div className="work-title">
+          <p>กรอกภาระงาน</p>
+        </div>
       </div>
     </div>
   );

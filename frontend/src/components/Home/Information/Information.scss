@@ -1,83 +1,93 @@
 .info-container {
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  border-radius: 35px;
-  padding: 3rem 3rem;
+  height: auto;
   width: 100%;
-
+  padding: 3rem 3rem;
+  
   .info-content {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 650px;
+    height: 100%;
 
     .info-title {
-      font-size: 30px;
-      font-weight: 500;
-      margin: 1rem;
-    }
-
-    .info-border {
-      overflow: hidden;
       display: flex;
       justify-content: center;
+      text-align: center;
+      margin: 1rem 0;
+
+      p {
+        font-size: 30px;
+        font-weight: 500;
+      }
+    }
+
+    .info-box {
+      display: flex;
+      flex-direction: column;
       align-items: center;
       width: 100%;
       height: 100%;
-      padding: 0 3rem;
+      padding: 1.5rem 3rem;
+      border-radius: 20px;
       border: 1px solid black;
 
-      .info-data {
+      .info-box-img {
         overflow: hidden;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 1px solid black;
+
+        img {
+          width: 100%;
+          object-fit: contain;
+          object-position: center;
+        }
+      }
+
+      .info-box-text {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        flex: 1;
         width: 100%;
+        gap: 10px;
+        margin-top: 2rem;
 
-        .info-data-img {
-          width: 180px;
-          height: 180px;
-          border-radius: 50%;
-          border: 1px solid black;
-          overflow: hidden;
-
-          img {
-            width: 100%;
-            object-fit: contain;
-            object-position: center;
-          }
-        }
-
-        .info-data-text {
-          margin-top: 2rem;
+        .info-text-data {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
           width: 100%;
           font-size: 17px;
-          
-          .data-text {
+
+          .info-data-header {
+            font-weight: 600;
+          }
+
+          .info-data-body {
+            overflow: hidden;
             display: flex;
-            justify-content: space-between;
-            gap: 2rem;
-            margin: 1.5rem 0;
-            min-width: 100%;
-            
-            .data-text-show {
-              overflow: hidden;
+            flex-direction: column;
+            font-weight: 300;
+            flex: 1;
+
+            .info-body-text {
               display: flex;
               width: 100%;
-              font-weight: 300;
+              height: 100%;
               
-              p {
-                min-width: 150px;
-                font-weight: 300;
+              .info-text {
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                flex: 1;
+                
+                p {
+                  overflow: hidden;
+                  min-width: 25%;
+                }
               }
-            }
-
-            p {
-              overflow: hidden;
-              font-weight: bold;
             }
           }
         }

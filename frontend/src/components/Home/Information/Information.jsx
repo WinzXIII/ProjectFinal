@@ -8,61 +8,62 @@ const Information = () => {
   return (
     <div className="info-container">
       <div className="info-content">
-        <div className="info-title">ข้อมูลส่วนบุคคล</div>
-        <div className="info-border">
-          <div className="info-data">
-            <div className="info-data-img">
-              <img src={user?.img} alt="Person" />
+        <div className="info-title">
+          <p>ข้อมูลส่วนบุคคล</p>
+        </div>
+        <div className="info-box">
+          <div className="info-box-img">
+            <img src={user?.img} alt="Person" />
+          </div>
+          <div className="info-box-text">
+            <div className="info-text-data">
+              <div className="info-data-header">รหัสพนักงาน {user?.codeID}</div>
+
+              <div className="info-data-body">
+                <div className="info-body-text">
+                  <div className="info-text">
+                    <p>ชื่อ - นามสกุล :</p>
+                    <p> {user?.name} </p>
+                  </div>
+                  <div className="info-text">
+                    <p>ตำแหน่ง :</p>
+                    <p> {user?.position} </p>
+                  </div>
+                </div>
+                <div className="info-body-text">
+                  <div className="info-text">
+                    <p>งาน :</p>
+                    <p> {user?.work} </p>
+                  </div>
+                  <div className="info-text">
+                    <p>หน่วยงาน :</p>
+                    <p> {user?.agency} </p>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <div className="info-data-text">
-              <p>รหัสพนักงาน: {user?.codeID}</p>
-
-              <div className="data-text">
-                <div className="data-text-show">
-                  <p>ชื่อ - นามสกุล​ :</p>
-                  {user?.name}
+            <div className="info-text-data">
+              <div className="info-data-header">ชื่อตำแหน่งผู้บังคับบัญชา</div>
+              <div className="info-data-body">
+                <div className="info-body-text">
+                  <div className="info-text">
+                    <p>ระดับต้น :</p>
+                    <p>ดร.รัฐภาคย์ รุ่งทิพย์</p>
+                  </div>
+                  <div className="info-text">
+                    <p>ตำแหน่ง :</p>
+                    <p>หัวหน้า......</p>
+                  </div>
                 </div>
-                <div className="data-text-show">
-                  <p>ตำแหน่ง : </p>
-                  {user?.position}
-                </div>
-              </div>
-
-              <div className="data-text">
-                <div className="data-text-show">
-                  <p>งาน : </p>
-                  {user?.work}
-                </div>
-
-                <div className="data-text-show">
-                  <p>หน่วยงาน :</p>
-                  {user?.agency}
-                </div>
-              </div>
-
-              <p>ชื่อตำแหน่งผู้บังคับบัญชา</p>
-
-              <div className="data-text">
-                <div className="data-text-show">
-                  <p>ระดับต้น​ : </p>
-                  ดร.รัฐภาคย์ รุ่งทิพย์
-                </div>
-                <div className="data-text-show">
-                  <p>ตำแหน่ง : </p>
-                  หัวหน้า......
-                </div>
-              </div>
-
-              <div className="data-text">
-                <div className="data-text-show">
-                  <p>ระดับเหนือขึ้นไป : </p>
-                  ดร. เกียรติ สุวรรณโชค
-                </div>
-
-                <div className="data-text-show">
-                  <p>ตำแหน่ง :</p>
-                  ผช.ผอ.
+                <div className="info-body-text">
+                  <div className="info-text">
+                    <p>ระดับเหนือขึ้นไป :</p>
+                    <p>ดร.เกียรติ สุวรรณโชค</p>
+                  </div>
+                  <div className="info-text">
+                    <p>ตำแหน่ง :</p>
+                    <p>ผช.ผอ.</p>
+                  </div>
                 </div>
               </div>
             </div>
