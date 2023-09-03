@@ -34,7 +34,7 @@ const Login = () => {
 
     if (username === user?.codeID && password === user?.password) {
       auth.login(user);
-      navigate("/th/home/information");
+      navigate(`/th/${auth.user.codeID}/information`);
     } else {
       LoginFaile();
     }
