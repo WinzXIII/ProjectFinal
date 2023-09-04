@@ -1,7 +1,29 @@
+@mixin button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
 .work-container {
-  width: 100%;
+  position: relative;
+  overflow: hidden;
   height: auto;
+  width: 100%;
   padding: 3rem 3rem;
+  white-space: nowrap;
+
+  h1 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 12px;
+  }
 
   .work-content {
     overflow: hidden;
@@ -18,6 +40,231 @@
       p {
         font-size: 30px;
         font-weight: 500;
+      }
+    }
+
+    .work-infomation {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 300px;
+      max-height: none;
+      gap: 10px;
+
+      .work-infomation-box {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 10px 3rem;
+        border-radius: 20px;
+        border: 1px solid black;
+
+        .work-box-header {
+          margin-top: 15px;
+          font-weight: 500;
+        }
+
+        .work-box-text {
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+
+          .work-text-data {
+            display: flex;
+            flex: 1;
+
+            .work-data-text {
+              overflow: hidden;
+              display: flex;
+              align-items: center;
+              width: 50%;
+
+              p {
+                overflow: hidden;
+                min-width: 150px;
+                font-weight: 500;
+              }
+
+              a {
+                overflow: hidden;
+                min-width: 150px;
+                font-weight: 300;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .work-form {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      width: 100%;
+      margin-top: 50px;
+      gap: 50px;
+
+      .work-form-main {
+        @extend .work-infomation;
+
+        .work-main-box {
+          overflow: visible;
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          height: 100%;
+          border-radius: 20px;
+          border: 1px solid black;
+
+          .work-box-nav {
+            display: flex;
+            text-align: center;
+            width: 100%;
+            height: 10%;
+            border-bottom: 1px solid black;
+
+            .work-nav-number {
+              overflow: hidden;
+              min-width: 10%;
+            }
+            .work-nav-work {
+              overflow: hidden;
+              min-width: 35%;
+            }
+            .work-nav-detail {
+              overflow: hidden;
+              min-width: 35%;
+            }
+            .work-nav-result {
+              overflow: hidden;
+              min-width: 20%;
+            }
+          }
+
+          .work-box-input {
+            display: flex;
+            text-align: center;
+
+            .work-input-number {
+              overflow: hidden;
+              min-width: 10%;
+            }
+            .work-input-work {
+              overflow: hidden;
+              min-width: 35%;
+            }
+            .work-input-detail {
+              overflow: hidden;
+              min-width: 35%;
+            }
+            .work-input-result {
+              overflow: hidden;
+              min-width: 20%;
+            }
+
+            div {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              height: 70px;
+              padding: 1rem 2rem;
+
+              input {
+                width: 100%;
+                height: 100%;
+                font-size: 14px;
+                padding: 0 1rem;
+                border-radius: 5px;
+                border: 1px solid black;
+              }
+
+              select {
+                width: 100%;
+                height: 100%;
+                border: 1px solid black;
+                background-color: white;
+              }
+            }
+          }
+
+          .work-box-add {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            flex: 1;
+            margin: 1rem;
+
+            button {
+              @include button;
+              width: 150px;
+              height: 40px;
+              background-color: #69d787;
+            }
+          }
+        }
+      }
+
+      .work-form-other {
+        @extend .work-infomation;
+
+        .work-other-box {
+          overflow: hidden;
+          display: flex;
+          height: 100%;
+          border-radius: 20px;
+          border: 1px solid black;
+        }
+      }
+
+      .work-form-creative {
+        @extend .work-infomation;
+
+        .work-creative-box {
+          overflow: hidden;
+          display: flex;
+          height: 100%;
+          border-radius: 20px;
+          border: 1px solid black;
+        }
+      }
+
+      .work-form-university {
+        @extend .work-infomation;
+
+        .work-university-box {
+          overflow: hidden;
+          display: flex;
+          height: 100%;
+          border-radius: 20px;
+          border: 1px solid black;
+        }
+      }
+
+      .work-form-reward {
+        @extend .work-infomation;
+
+        .work-reward-box {
+          overflow: hidden;
+          display: flex;
+          height: 100%;
+          border-radius: 20px;
+          border: 1px solid black;
+        }
+      }
+
+      .work-form-submit {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+
+        button {
+          @include button;
+          border-radius: 5px;
+          width: 500px;
+          height: 40px;
+          background-color: #69d787;
+        }
       }
     }
   }
