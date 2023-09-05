@@ -108,7 +108,7 @@
         @extend .work-infomation;
 
         .work-main-box {
-          overflow: visible;
+          overflow: hidden;
           display: flex;
           flex-direction: column;
           width: 100%;
@@ -122,45 +122,45 @@
             width: 100%;
             height: 10%;
             border-bottom: 1px solid black;
+          }
 
-            .work-nav-number {
-              overflow: hidden;
-              min-width: 10%;
-            }
-            .work-nav-work {
-              overflow: hidden;
-              min-width: 35%;
-            }
-            .work-nav-detail {
-              overflow: hidden;
-              min-width: 35%;
-            }
-            .work-nav-result {
-              overflow: hidden;
-              min-width: 20%;
+          .work-main-number {
+            overflow: hidden;
+            min-width: 9%;
+          }
+
+          .work-main-work {
+            overflow: hidden;
+            min-width: 33%;
+          }
+
+          .work-main-detail {
+            overflow: hidden;
+            min-width: 33%;
+          }
+
+          .work-main-result {
+            overflow: hidden;
+            min-width: 15%;
+          }
+
+          .work-main-remove {
+            overflow: hidden;
+            min-width: 10%;
+
+            button {
+              @include button;
+              min-width: 80%;
+              height: 90%;
+              background-color: red;
             }
           }
 
           .work-box-input {
             display: flex;
             text-align: center;
-
-            .work-input-number {
-              overflow: hidden;
-              min-width: 10%;
-            }
-            .work-input-work {
-              overflow: hidden;
-              min-width: 35%;
-            }
-            .work-input-detail {
-              overflow: hidden;
-              min-width: 35%;
-            }
-            .work-input-result {
-              overflow: hidden;
-              min-width: 20%;
-            }
+            width: 100%;
+            height: 100%;
 
             div {
               display: flex;
@@ -182,6 +182,7 @@
               select {
                 width: 100%;
                 height: 100%;
+                font-size: 12px;
                 border: 1px solid black;
                 background-color: white;
               }
@@ -211,9 +212,93 @@
         .work-other-box {
           overflow: hidden;
           display: flex;
+          flex-direction: column;
           height: 100%;
           border-radius: 20px;
           border: 1px solid black;
+
+          .work-box-nav {
+            display: flex;
+            text-align: center;
+            width: 100%;
+            height: 10%;
+            border-bottom: 1px solid black;
+          }
+
+          .work-other-number {
+            overflow: hidden;
+            min-width: 9%;
+          }
+
+          .work-other-work {
+            overflow: hidden;
+            min-width: 66%;
+          }
+
+          .work-other-result {
+            overflow: hidden;
+            min-width: 15%;
+          }
+
+          .work-other-remove {
+            overflow: hidden;
+            min-width: 10%;
+
+            button {
+              @include button;
+              min-width: 80%;
+              height: 90%;
+              background-color: red;
+            }
+          }
+
+          .work-box-input {
+            display: flex;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+
+            div {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              height: 70px;
+              padding: 1rem 2rem;
+
+              input {
+                width: 100%;
+                height: 100%;
+                font-size: 14px;
+                padding: 0 1rem;
+                border-radius: 5px;
+                border: 1px solid black;
+              }
+
+              select {
+                width: 100%;
+                height: 100%;
+                font-size: 12px;
+                border: 1px solid black;
+                background-color: white;
+              }
+            }
+          }
+
+          .work-box-add {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            flex: 1;
+            margin: 1rem;
+
+            button {
+              @include button;
+              width: 150px;
+              height: 40px;
+              background-color: #69d787;
+            }
+          }
         }
       }
 
@@ -223,9 +308,93 @@
         .work-creative-box {
           overflow: hidden;
           display: flex;
+          flex-direction: column;
           height: 100%;
           border-radius: 20px;
           border: 1px solid black;
+
+          .work-box-nav {
+            display: flex;
+            text-align: center;
+            width: 100%;
+            height: 10%;
+            border-bottom: 1px solid black;
+          }
+
+          .work-creative-number {
+            overflow: hidden;
+            min-width: 9%;
+          }
+
+          .work-creative-work {
+            overflow: hidden;
+            min-width: 66%;
+          }
+
+          .work-creative-result {
+            overflow: hidden;
+            min-width: 15%;
+          }
+
+          .work-creative-remove {
+            overflow: hidden;
+            min-width: 10%;
+
+            button {
+              @include button;
+              min-width: 80%;
+              height: 90%;
+              background-color: red;
+            }
+          }
+
+          .work-box-input {
+            display: flex;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+
+            div {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              height: 70px;
+              padding: 1rem 2rem;
+
+              input {
+                width: 100%;
+                height: 100%;
+                font-size: 14px;
+                padding: 0 1rem;
+                border-radius: 5px;
+                border: 1px solid black;
+              }
+
+              select {
+                width: 100%;
+                height: 100%;
+                font-size: 12px;
+                border: 1px solid black;
+                background-color: white;
+              }
+            }
+          }
+
+          .work-box-add {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            flex: 1;
+            margin: 1rem;
+
+            button {
+              @include button;
+              width: 150px;
+              height: 40px;
+              background-color: #69d787;
+            }
+          }
         }
       }
 
@@ -235,9 +404,88 @@
         .work-university-box {
           overflow: hidden;
           display: flex;
+          flex-direction: column;
           height: 100%;
           border-radius: 20px;
           border: 1px solid black;
+
+          .work-box-nav {
+            display: flex;
+            text-align: center;
+            width: 100%;
+            height: 10%;
+            border-bottom: 1px solid black;
+          }
+
+          .work-university-type {
+            overflow: hidden;
+            min-width: 20%;
+          }
+
+          .work-university-agency {
+            overflow: hidden;
+            min-width: 70%;
+          }
+
+          .work-university-remove {
+            overflow: hidden;
+            min-width: 10%;
+
+            button {
+              @include button;
+              min-width: 80%;
+              height: 90%;
+              background-color: red;
+            }
+          }
+
+          .work-box-input {
+            display: flex;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+
+            div {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              height: 70px;
+              padding: 1rem 2rem;
+
+              input {
+                width: 100%;
+                height: 100%;
+                font-size: 14px;
+                padding: 0 1rem;
+                border-radius: 5px;
+                border: 1px solid black;
+              }
+
+              select {
+                width: 100%;
+                height: 100%;
+                font-size: 12px;
+                border: 1px solid black;
+                background-color: white;
+              }
+            }
+          }
+
+          .work-box-add {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            flex: 1;
+            margin: 1rem;
+
+            button {
+              @include button;
+              width: 150px;
+              height: 40px;
+              background-color: #69d787;
+            }
+          }
         }
       }
 
@@ -247,9 +495,110 @@
         .work-reward-box {
           overflow: hidden;
           display: flex;
+          flex-direction: column;
           height: 100%;
           border-radius: 20px;
           border: 1px solid black;
+
+          .work-box-nav {
+            display: flex;
+            text-align: center;
+            width: 100%;
+            height: 10%;
+            border-bottom: 1px solid black;
+          }
+
+          .work-reward-number {
+            overflow: hidden;
+            min-width: 9%;
+          }
+
+          .work-reward-name {
+            overflow: hidden;
+            min-width: 21%;
+          }
+
+          .work-reward-type {
+            overflow: hidden;
+            min-width: 20%;
+          }
+
+          .work-reward-agency {
+            overflow: hidden;
+            min-width: 20%;
+          }
+
+          .work-reward-date {
+            overflow: hidden;
+            min-width: 20%;
+            
+            .work-reward-date-settings {
+              display: flex;
+              justify-content: center;
+              color: black;
+              border: none;
+            }
+          }
+
+          .work-reward-remove {
+            overflow: hidden;
+            min-width: 10%;
+
+            button {
+              @include button;
+              min-width: 80%;
+              height: 90%;
+              background-color: red;
+            }
+          }
+
+          .work-box-input {
+            display: flex;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+
+            div {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              height: 70px;
+              padding: 1rem 2rem;
+
+              input {
+                width: 100%;
+                height: 100%;
+                font-size: 14px;
+                padding: 0 1rem;
+                border-radius: 5px;
+                border: 1px solid black;
+              }
+
+              select {
+                width: 100%;
+                height: 100%;
+                font-size: 12px;
+                border: 1px solid black;
+                background-color: white;
+              }
+            }
+          }
+
+          .work-box-add {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            flex: 1;
+            margin: 1rem;
+
+            button {
+              @include button;
+              width: 150px;
+              height: 40px;
+              background-color: #69d787;
+            }
+          }
         }
       }
 
