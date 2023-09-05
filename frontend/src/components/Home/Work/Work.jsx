@@ -7,7 +7,7 @@ const Work = () => {
   const auth = useAuth();
   const user = auth.user;
 
-  const [count, setCount] = React.useState(3);
+  const [count, setCount] = React.useState(1);
 
   return (
     <div className="work-container">

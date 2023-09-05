@@ -105,7 +105,12 @@
       gap: 50px;
 
       .work-form-main {
-        @extend .work-infomation;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        min-height: 200px;
+        max-height: none;
+        gap: 10px;
 
         .work-main-box {
           overflow: hidden;
@@ -120,7 +125,7 @@
             display: flex;
             text-align: center;
             width: 100%;
-            height: 10%;
+            height: 20%;
             border-bottom: 1px solid black;
           }
 
@@ -207,7 +212,7 @@
       }
 
       .work-form-other {
-        @extend .work-infomation;
+        @extend .work-form-main;
 
         .work-other-box {
           overflow: hidden;
@@ -221,7 +226,7 @@
             display: flex;
             text-align: center;
             width: 100%;
-            height: 10%;
+            height: 20%;
             border-bottom: 1px solid black;
           }
 
@@ -303,7 +308,7 @@
       }
 
       .work-form-creative {
-        @extend .work-infomation;
+        @extend .work-form-main;
 
         .work-creative-box {
           overflow: hidden;
@@ -317,7 +322,7 @@
             display: flex;
             text-align: center;
             width: 100%;
-            height: 10%;
+            height: 20%;
             border-bottom: 1px solid black;
           }
 
@@ -399,7 +404,7 @@
       }
 
       .work-form-university {
-        @extend .work-infomation;
+        @extend .work-form-main;
 
         .work-university-box {
           overflow: hidden;
@@ -413,7 +418,7 @@
             display: flex;
             text-align: center;
             width: 100%;
-            height: 10%;
+            height: 20%;
             border-bottom: 1px solid black;
           }
 
@@ -490,7 +495,7 @@
       }
 
       .work-form-reward {
-        @extend .work-infomation;
+        @extend .work-form-main;
 
         .work-reward-box {
           overflow: hidden;
@@ -504,7 +509,7 @@
             display: flex;
             text-align: center;
             width: 100%;
-            height: 10%;
+            height: 20%;
             border-bottom: 1px solid black;
           }
 
@@ -531,7 +536,7 @@
           .work-reward-date {
             overflow: hidden;
             min-width: 20%;
-            
+
             .work-reward-date-settings {
               display: flex;
               justify-content: center;
