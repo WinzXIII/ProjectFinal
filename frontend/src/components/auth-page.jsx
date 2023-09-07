@@ -1,10 +1,11 @@
 import { useState, createContext, useContext } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [informationUser, setInformationUser] = useState(null);
 
   const login = (user) => {
     setUser(user);
@@ -14,15 +15,21 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
+  const information = (user) => {
+    setInformationUser(user);
+  };
+
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider
+      value={{ user, informationUser, login, logout, information }}
+    >
       {children}
     </AuthContext.Provider>
   );
 };
 
 AuthProvider.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export const useAuth = () => {

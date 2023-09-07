@@ -5,18 +5,18 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { AuthProvider } from "./components/auth-page";
-import Root from "./components/root";
-import Login from "./components/Login/Login";
-import Home from "./components/Home/Home";
-import Information from "./components/Home/Information/Information";
-import Work from "./components/Home/Work/Work";
-import History from "./components/Home/History/History";
-import Personnel from "./components/Home/Personnel/Personnel";
-import Department from "./components/Home/Department/Department"
-import HumanResource from "./components/Home/HumanResource/HumanResource"
-import Move from "./components/Home/Move/Move"
-import Settings from "./components/Home/Settings/Settings";
-import Form from "./components/Home/Form/Form";
+import Root from "@components/root";
+import Login from "@components/Login/Login";
+import Home from "@components/Home/Home";
+import Information from "@components/Home/Information/Information";
+import Work from "@components/Home/Work/Work";
+import History from "@components/Home/History/History";
+import Personnel from "@components/Home/Personnel/Personnel";
+import Department from "@components/Home/Department/Department"
+import HumanResource from "@components/Home/HumanResource/HumanResource"
+import Move from "@components/Home/Move/Move"
+import Settings from "@components/Home/Settings/Settings";
+import Form from "@components/Home/Form/Form";
 
 const router = createBrowserRouter([
   {

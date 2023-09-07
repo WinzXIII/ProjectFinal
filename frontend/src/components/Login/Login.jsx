@@ -2,16 +2,31 @@ import "./Login.scss";
 import React from "react";
 import TH from "../../assets/picture/TH.png";
 import Logo from "../../assets/picture/LogoTechno.png";
-import Person from "../../assets/data/Person";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth-page";
 
 const Login = () => {
   const [onValid, setOnValid] = React.useState(false);
+  const [dataUser, setDataUser] = React.useState([]);
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const auth = useAuth();
   const navigate = useNavigate();
+
+  React.useEffect(() => {
+    getUserData();
+  }, []);
+
+  function getUserData() {
+    axios
+      .get("http://localhost:8080/technopolis/user")
+      .then((res) => {
+        setDataUser(res?.data);
+        auth.information(res?.data);
+      })
+      .catch((err) => console.error(err));
+  }
 
   function LoginFaile() {
     const user = document.querySelector(".user");
@@ -28,13 +43,15 @@ const Login = () => {
     }, 10000);
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const user = Person.find((item) => item.codeID === username);
+
+    const user = dataUser.find((item) => item.codeID === username);
+    console.log(user);
 
     if (username === user?.codeID && password === user?.password) {
       auth.login(user);
-      navigate(`/th/${auth.user.codeID}/information`);
+      navigate(`/th/${user?.codeID}/information`);
     } else {
       LoginFaile();
     }

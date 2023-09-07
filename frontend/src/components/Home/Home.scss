@@ -72,10 +72,11 @@
       flex: 1;
 
       .home-data-nav {
+        overflow: auto;
         border: 1px solid black;
         border-top: none;
         min-width: 200px;
-        height: 100%;
+        flex: 1;
 
         .home-nav-content {
           display: flex;

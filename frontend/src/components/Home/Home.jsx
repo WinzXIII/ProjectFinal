@@ -91,13 +91,13 @@ const Home = () => {
               </div>
               <div className="home-nav-text">
                 <p>รหัสพนักงาน​ : {user?.codeID}</p>
-                <p>ชื่อ : {user?.name}</p>
+                <p>{user?.name}</p>
                 <p>ตำแหน่ง : {user?.position}</p>
               </div>
               <div className="home-nav-page">
                 {NavMenu.map(
                   (item, index) =>
-                    item.setting.includes(user?.setting) && (
+                    item.setting.includes(user?.settings) && (
                       <NavLink
                         key={index}
                         to={item.path}
