@@ -14,20 +14,6 @@ const Login = () => {
   const auth = useAuth();
   const navigate = useNavigate();
 
-  React.useEffect(() => {
-    getUserData();
-  }, []);
-
-  function getUserData() {
-    axios
-      .get("http://localhost:8080/technopolis/user")
-      .then((res) => {
-        setDataUser(res?.data);
-        auth.information(res?.data);
-      })
-      .catch((err) => console.error(err));
-  }
-
   function LoginFaile() {
     const user = document.querySelector(".user");
     const pass = document.querySelector(".pass");
@@ -46,14 +32,22 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const user = dataUser.find((item) => item.codeID === username);
-    console.log(user);
-
-    if (username === user?.codeID && password === user?.password) {
-      auth.login(user);
-      navigate(`/th/${user?.codeID}/information`);
-    } else {
-      LoginFaile();
+    try {
+      axios
+        .post("http://localhost:8080/technopolis/user/login", {
+          codeID: username,
+          password: password,
+        })
+        .then((res) => {
+          if (!res) {
+            console.log(res);
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    } catch (err) {
+      console.error(err);
     }
   };
 

@@ -5,14 +5,13 @@ $colorDarkGray: #757575;
 .log-container {
   display: flex;
   flex-direction: column;
-  height: 100%;
   overflow: hidden;
+  height: 100%;
 
   .log-nav {
     display: flex;
     justify-content: end;
     align-items: center;
-    flex-shrink: 0;
     height: 80px;
     background-color: $colorGray;
     border: 1px solid black;
@@ -45,7 +44,7 @@ $colorDarkGray: #757575;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    height: 100%;
+    flex: 1;
     padding: 2rem 0;
 
     .log-box-border {

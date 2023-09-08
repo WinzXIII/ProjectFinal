@@ -1,0 +1,131 @@
+@mixin button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.work-form-main {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  max-height: none;
+  gap: 10px;
+
+  .work-main-box {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 1px solid black;
+
+    .work-box-nav {
+      display: flex;
+      text-align: center;
+      width: 100%;
+      height: 20%;
+      border-bottom: 1px solid black;
+    }
+
+    .work-main-number {
+      overflow: hidden;
+      min-width: 9%;
+    }
+
+    .work-main-work {
+      overflow: hidden;
+      min-width: 33%;
+    }
+
+    .work-main-detail {
+      overflow: hidden;
+      min-width: 33%;
+    }
+
+    .work-main-result {
+      overflow: hidden;
+      min-width: 15%;
+    }
+
+    .work-main-remove {
+      overflow: hidden;
+      min-width: 10%;
+
+      button {
+        @include button;
+        min-width: 80%;
+        height: 90%;
+        background-color: red;
+        transition: all 0.2s ease;
+      }
+      
+      button:hover {
+        background-color: gray;
+        transition: all 0.2s ease;
+      }
+    }
+
+    .work-box-input {
+      display: flex;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 70px;
+        padding: 1rem 2rem;
+
+        input {
+          width: 100%;
+          height: 100%;
+          font-size: 14px;
+          padding: 0 1rem;
+          border-radius: 5px;
+          border: 1px solid black;
+        }
+
+        select {
+          width: 100%;
+          height: 100%;
+          font-size: 12px;
+          border: 1px solid black;
+          background-color: white;
+        }
+      }
+    }
+
+    .work-box-add {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      flex: 1;
+      margin: 1rem;
+
+      button {
+        @include button;
+        width: 150px;
+        height: 40px;
+        background-color: #69d787;
+        transition: all 0.2s ease;
+      }
+
+      button:hover {
+        background-color: gray;
+        transition: all 0.2s ease;
+      }
+    }
+  }
+}
