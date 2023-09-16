@@ -1,18 +1,30 @@
 import "./WorkFormMain.scss";
-import React from "react";
+import React, { useState } from "react";
 import { IoMdAddCircleOutline } from "react-icons/io";
 
 const WorkFormMain = () => {
-  const [count, setCount] = React.useState(1);
+  const [count, setCount] = useState(1);
+  const [inputs, setInputs] = useState([{ work: "", detail: "", result: "" }]);
 
-  const Add = () => {
+  const handleAdd = () => {
     setCount(count + 1);
+    setInputs([...inputs, { work: "", detail: "", result: "" }]);
   };
 
-  const Remove = () => {
+  const handleRemove = (index) => {
     if (count > 1) {
       setCount(count - 1);
+      const updatedInputs = [...inputs];
+      updatedInputs.splice(index, 1);
+      setInputs(updatedInputs);
     }
+  };
+
+  const handleInput = (index, event) => {
+    const { name, value } = event.target;
+    const updatedInputs = [...inputs];
+    updatedInputs[index][name] = value;
+    setInputs(updatedInputs);
   };
 
   return (
@@ -26,34 +38,46 @@ const WorkFormMain = () => {
           <div className="work-main-result">ผลการปฏิบัติงาน</div>
           <div className="work-main-remove"></div>
         </div>
-        {Array.from({ length: count }, (_, index) => (
+        {inputs.map((input, index) => (
           <div className="work-box-input" key={index}>
             <div className="work-main-number">{index + 1}</div>
             <div className="work-main-work">
-              <input type="text" />
+              <input
+                type="text"
+                name="work"
+                value={input.work}
+                onChange={(e) => handleInput(index, e)}
+              />
             </div>
             <div className="work-main-detail">
-              <input type="text" />
+              <input
+                type="text"
+                name="detail"
+                value={input.detail}
+                onChange={(e) => handleInput(index, e)}
+              />
             </div>
             <div className="work-main-result">
-              <select id={`select${index}`}>
+              <select
+                id={`select${index}`}
+                name="result"
+                value={input.result}
+                onChange={(e) => handleInput(index, e)}
+              >
                 <option value=""></option>
                 <option value="success">เสร็จสิ้น</option>
                 <option value="wait">อยู่ระหว่างดำเนินการ</option>
               </select>
             </div>
             <div className="work-main-remove">
-              <button
-                type="button"
-                onClick={() => Remove()}
-              >
+              <button type="button" onClick={() => handleRemove(index)}>
                 ลบ
               </button>
             </div>
           </div>
         ))}
         <div className="work-box-add">
-          <button type="button" onClick={() => Add()}>
+          <button type="button" onClick={handleAdd}>
             <IoMdAddCircleOutline size="20px" />
             เพิ่มข้อมูล
           </button>

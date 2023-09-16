@@ -13,7 +13,7 @@ const Information = () => {
         </div>
         <div className="info-box">
           <div className="info-box-img">
-            <img src={user?.img} alt="Person" />
+            <img src={user?.image} alt="Person" />
           </div>
           <div className="info-box-text">
             <div className="info-text-data">
@@ -23,7 +23,10 @@ const Information = () => {
                 <div className="info-body-text">
                   <div className="info-text">
                     <p>ชื่อ - นามสกุล :</p>
-                    <p> {user?.name} </p>
+                    <p>
+                      {user?.gender}
+                      {user?.firstName} {user?.lastName}
+                    </p>
                   </div>
                   <div className="info-text">
                     <p>ตำแหน่ง :</p>
@@ -33,7 +36,7 @@ const Information = () => {
                 <div className="info-body-text">
                   <div className="info-text">
                     <p>งาน :</p>
-                    <p> {user?.work} </p>
+                    <p> {user?.department} </p>
                   </div>
                   <div className="info-text">
                     <p>หน่วยงาน :</p>

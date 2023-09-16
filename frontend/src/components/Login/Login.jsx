@@ -5,6 +5,7 @@ import Logo from "../../assets/picture/LogoTechno.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth-page";
+import { LoginFaile } from "../../assets/function/Function";
 
 const Login = () => {
   const [onValid, setOnValid] = React.useState(false);
@@ -14,41 +15,25 @@ const Login = () => {
   const auth = useAuth();
   const navigate = useNavigate();
 
-  function LoginFaile() {
-    const user = document.querySelector(".user");
-    const pass = document.querySelector(".pass");
-
-    user.classList.add("active");
-    pass.classList.add("active");
-    setOnValid(true);
-
-    setTimeout(() => {
-      user.classList.remove("active");
-      pass.classList.remove("active");
-      setOnValid(false);
-    }, 10000);
-  }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      axios
-        .post("http://localhost:8080/technopolis/user/login", {
-          codeID: username,
-          password: password,
-        })
-        .then((res) => {
-          if (!res) {
-            console.log(res);
-          }
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    } catch (err) {
-      console.error(err);
-    }
+    axios
+      .post("http://localhost:8080/technopolis/auth/login", {
+        username: username,
+        password: password,
+      })
+      .then((res) => {
+        if (res) {
+          navigate("/th/home");
+          auth.login(res?.data);
+        }
+      })
+      .catch((err) => {
+        LoginFaile();
+        setOnValid(true);
+        console.error(err);
+      });
   };
 
   return (

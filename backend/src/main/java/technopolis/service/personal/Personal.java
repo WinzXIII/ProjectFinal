@@ -1,13 +1,9 @@
 package technopolis.service.personal;
 
-import java.util.Set;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Table;
 import technopolis.service.users.User;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -24,9 +20,8 @@ public class Personal {
 
     private String employeeId;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "gender")
-    private Gender gender;
+    private String gender;
 
     @Column(name = "first_name")
     private String firstName;
@@ -49,10 +44,6 @@ public class Personal {
     @OneToOne(mappedBy = "personal")
     private User user;
 
-    public enum Gender {
-        นาย, นาง, นางสาว
-    }
-
     public Integer getId() {
         return id;
     }
@@ -69,11 +60,11 @@ public class Personal {
         this.user = user;
     }
 
-    public Gender getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Gender gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 

@@ -23,8 +23,15 @@ public class UserController {
     private ServiceUserPersonal serviceUserPersonal;
 
     @GetMapping(path = "/all")
-    public Iterable<User> getAll() {
-        return serviceUserPersonal.findAllUser();
+    public ResponseEntity<Iterable<User>> getAll() {
+
+        Iterable<User> allUser = serviceUserPersonal.findAllUser();
+
+        if (allUser.iterator().hasNext()) {
+            return new ResponseEntity<>(allUser, HttpStatus.OK);
+        }
+
+        return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     @GetMapping(path = "/{username}")

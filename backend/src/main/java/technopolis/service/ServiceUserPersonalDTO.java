@@ -10,10 +10,12 @@ public class ServiceUserPersonalDTO {
     private String position;
     private String department;
     private String agency;
+    private String role;
     private String image;
+    private Boolean enable;
 
     public ServiceUserPersonalDTO(Integer id, String employeeId, String gender, String firstName, String lastName,
-            String position, String department, String agency, String image) {
+            String position, String department, String agency, String role, String image, Boolean enable) {
         this.id = id;
         this.employeeId = employeeId;
         this.gender = gender;
@@ -22,7 +24,9 @@ public class ServiceUserPersonalDTO {
         this.position = position;
         this.department = department;
         this.agency = agency;
+        this.role = role;
         this.image = image;
+        this.enable = enable;
     }
 
     public Integer getId() {
@@ -57,7 +61,23 @@ public class ServiceUserPersonalDTO {
         return agency;
     }
 
+    public String getRole() {
+        return role;
+    }
+
     public String getImage() {
         return image;
+    }
+
+    public Boolean isEnable() {
+        return enable;
+    }
+
+    @Override
+    public String toString() {
+        return "ServiceUserPersonalDTO [id=" + id + ", employeeId=" + employeeId + ", gender=" + gender + ", firstName="
+                + firstName + ", lastName="
+                + lastName + ", position=" + position + ", department=" + department + ", agency=" + agency + ", image"
+                + image + "]";
     }
 }

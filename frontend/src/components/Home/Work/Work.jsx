@@ -15,8 +15,8 @@ const Work = () => {
   const SubmitForm = (e) => {
     e.preventDefault();
 
-    console.log(e)
-  }
+    console.log(e);
+  };
 
   return (
     <div className="work-container">
@@ -76,7 +76,6 @@ const Work = () => {
           <WorkFormCreative />
           <WorkFormUniversity />
           <WorkFormReward />
-
           <div className="work-form-submit">
             <button type="submit">บันทึกข้อมูล</button>
           </div>

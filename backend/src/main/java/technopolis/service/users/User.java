@@ -1,7 +1,5 @@
 package technopolis.service.users;
 
-import java.util.List;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Table;
@@ -36,7 +34,7 @@ public class User {
 
   @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "user_id", referencedColumnName = "id", unique = true)
-  private List<Personal> personal;
+  private Personal personal;
 
   public Integer getId() {
     return id;
