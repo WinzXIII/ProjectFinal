@@ -17,7 +17,7 @@ public class User {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  @Column(name = "id")
+  @Column(name = "user_id")
   private Integer id;
 
   @Column(name = "username", nullable = false, unique = true)
@@ -32,8 +32,7 @@ public class User {
   @Column(name = "enable")
   private boolean enable = false;
 
-  @OneToOne(cascade = CascadeType.ALL)
-  @JoinColumn(name = "user_id", referencedColumnName = "id", unique = true)
+  @OneToOne(mappedBy = "user")
   private Personal personal;
 
   public Integer getId() {

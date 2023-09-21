@@ -5,7 +5,7 @@ import Logo from "../../assets/picture/LogoTechno.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth-page";
-import { LoginFaile } from "../../assets/function/Function";
+import { LoginFaile } from "../../assets/function/LoginFaile";
 
 const Login = () => {
   const [onValid, setOnValid] = React.useState(false);

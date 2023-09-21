@@ -28,7 +28,7 @@ const WorkFormMain = () => {
   };
 
   return (
-    <div className="work-form-main">
+    <div className="work-form-main" id="formMain">
       <h1>ภาระงานหลักและผลการปฎิบัติงาน</h1>
       <div className="work-main-box">
         <div className="work-box-nav">

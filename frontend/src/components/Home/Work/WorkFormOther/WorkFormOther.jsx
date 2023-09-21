@@ -28,7 +28,7 @@ const WorkFormOther = () => {
   };
 
   return (
-    <div className="work-form-other">
+    <div className="work-form-other" id="formOther">
       <h1>งานอื่น / งานพิเศษและผลการปฏิบัติงาน</h1>
       <div className="work-other-box">
         <div className="work-box-nav">

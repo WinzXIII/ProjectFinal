@@ -1,5 +1,6 @@
 package technopolis.service.personal;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Table;
 import technopolis.service.users.User;
@@ -7,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 
 @Entity
@@ -14,10 +16,15 @@ import jakarta.persistence.OneToOne;
 public class Personal {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
+    private Integer id;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id", unique = true)
+    private User user;
+
+    @Column(name = "employee_id", unique = true)
     private String employeeId;
 
     @Column(name = "gender")
@@ -41,15 +48,12 @@ public class Personal {
     @Column(name = "image")
     private String image;
 
-    @OneToOne(mappedBy = "personal")
-    private User user;
-
     public Integer getId() {
-        return id;
+        return user.getId();
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(User user) {
+        this.user = user;
     }
 
     public String getEmployeeId() {

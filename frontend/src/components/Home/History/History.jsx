@@ -37,14 +37,14 @@ const History = () => {
           <div className="his-box-table">
             <div className="his-table-head">
               <div className="his-table-number">ลำดับ</div>
-              <div className="his-table-term">ปีการศึกษา</div>
-              <div className="his-table-start">ตั้งต่วันที่</div>
+              <div className="his-table-year">ปีการศึกษา</div>
+              <div className="his-table-start">ตั้งแต่วันที่</div>
               <div className="his-table-end">ถึงวันที่</div>
               <div className="his-table-status">สถานะ</div>
             </div>
             <div className="his-table-content">
               <div className="his-table-number"></div>
-              <div className="his-table-term"></div>
+              <div className="his-table-year"></div>
               <div className="his-table-start"></div>
               <div className="his-table-end"></div>
               <div className="his-table-status"></div>

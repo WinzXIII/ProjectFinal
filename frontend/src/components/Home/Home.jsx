@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth-page";
 import { BiLogOut } from "react-icons/bi";
-import { NavMenu } from "../../assets/function/Const";
+import { NavMenu } from "../../assets/function/NavMenu";
 import Logo from "../../assets/picture/LogoNav.png";
 import TH from "../../assets/picture/TH.png";
 
@@ -47,8 +47,7 @@ const Home = () => {
               <div className="home-nav-text">
                 <p>รหัสพนักงาน​ : {user?.employeeId}</p>
                 <p>
-                  {user?.gender}
-                  {user?.firstName} {user?.lastName}
+                  {user?.name}
                 </p>
                 <p>ตำแหน่ง : {user?.position}</p>
               </div>

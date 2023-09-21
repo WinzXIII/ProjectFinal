@@ -30,7 +30,7 @@ const WorkFormReward = () => {
   };
 
   return (
-    <div className="work-form-reward">
+    <div className="work-form-reward" id="formReward">
       <h1>รางวัลที่ได้รับจากการปฏิบัติงาน</h1>
       <div className="work-reward-box">
         <div className="work-box-nav">

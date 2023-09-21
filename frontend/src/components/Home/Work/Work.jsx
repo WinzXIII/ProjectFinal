@@ -1,7 +1,6 @@
 import "./Work.scss";
 import { useAuth } from "../../auth-page";
-import { IoMdAddCircleOutline } from "react-icons/io";
-import React from "react";
+import React, { useState } from "react";
 import WorkFormMain from "./WorkFormMain/WorkFormMain";
 import WorkFormOther from "./WorkFormOther/WorkFormOther";
 import WorkFormCreative from "./WorkFormCreative/WorkFormCreative";
@@ -12,10 +11,8 @@ const Work = () => {
   const auth = useAuth();
   const user = auth.user;
 
-  const SubmitForm = (e) => {
+  const SubmitForm = (e, userId) => {
     e.preventDefault();
-
-    console.log(e);
   };
 
   return (
@@ -42,7 +39,7 @@ const Work = () => {
               <div className="work-text-data">
                 <div className="work-data-text">
                   <p>งาน :</p>
-                  <a>{user?.work}</a>
+                  <a>{user?.department}</a>
                 </div>
                 <div className="work-data-text">
                   <p>หน่วยงาน :</p>
@@ -70,7 +67,10 @@ const Work = () => {
           </div>
         </div>
 
-        <form className="work-form" onSubmit={SubmitForm}>
+        <form
+          className="work-form"
+          onSubmit={(e) => SubmitForm(e, user?.employeeId)}
+        >
           <WorkFormMain />
           <WorkFormOther />
           <WorkFormCreative />

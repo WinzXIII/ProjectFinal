@@ -24,8 +24,7 @@ const Information = () => {
                   <div className="info-text">
                     <p>ชื่อ - นามสกุล :</p>
                     <p>
-                      {user?.gender}
-                      {user?.firstName} {user?.lastName}
+                      {user?.name}
                     </p>
                   </div>
                   <div className="info-text">

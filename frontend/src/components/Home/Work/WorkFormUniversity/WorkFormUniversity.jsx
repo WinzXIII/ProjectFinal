@@ -4,11 +4,11 @@ import { IoMdAddCircleOutline } from "react-icons/io";
 
 const WorkFormUniversity = () => {
   const [count, setCount] = useState(1);
-  const [inputs, setInputs] = useState([{ type: "", name: "" }]);
+  const [inputs, setInputs] = useState([{ type: "", agency: "" }]);
 
   const handleAdd = () => {
     setCount(count + 1);
-    setInputs([...inputs, { type: "", name: "" }]);
+    setInputs([...inputs, { type: "", agency: "" }]);
   };
 
   const handleRemove = (index) => {
@@ -28,7 +28,7 @@ const WorkFormUniversity = () => {
   };
 
   return (
-    <div className="work-form-university">
+    <div className="work-form-university" id="formUniversity">
       <h1>หน่วยงานอื่นที่ติดต่อประสานงานทั้งภายในและภายนอกมหาวิทยาลัย</h1>
       <div className="work-university-box">
         <div className="work-box-nav">
@@ -54,8 +54,8 @@ const WorkFormUniversity = () => {
             <div className="work-university-agency">
               <input
                 type="text"
-                name="name"
-                value={input.name}
+                name="agency"
+                value={input.agency}
                 onChange={(e) => handleInputs(index, e)}
               />
             </div>
