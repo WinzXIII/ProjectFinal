@@ -6,10 +6,10 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth-page";
 import { LoginFaile } from "../../assets/function/LoginFaile";
+import { Person } from "../../assets/person"
 
 const Login = () => {
   const [onValid, setOnValid] = React.useState(false);
-  const [dataUser, setDataUser] = React.useState([]);
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const auth = useAuth();
@@ -18,22 +18,14 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    axios
-      .post("http://localhost:8080/technopolis/auth/login", {
-        username: username,
-        password: password,
-      })
-      .then((res) => {
-        if (res) {
-          navigate("/th/home");
-          auth.login(res?.data);
-        }
-      })
-      .catch((err) => {
-        LoginFaile();
-        setOnValid(true);
-        console.error(err);
-      });
+    const user = Person.find((user) => user.empNumber == username)
+    
+    if(user) {
+      navigate("/th/home/information");
+      auth.login(user)
+    } else {
+      LoginFaile();
+    }
   };
 
   return (
