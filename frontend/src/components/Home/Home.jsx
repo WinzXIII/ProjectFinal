@@ -12,14 +12,6 @@ const Home = () => {
   const user = auth.user;
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (user != null || user != undefined) {
-      navigate("/th/home/information");
-    } else {
-      navigate("/th/login");
-    }
-  }, []);
-
   return (
     <div className="home-container">
       <div className="home-content">
