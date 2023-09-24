@@ -8,6 +8,7 @@ export const Person = [
       position: "พนักงาน",
       department: "การบริหาร",
       agency: "ฝ่ายบริหาร",
+      role: "Member",
       image: "https://www.venmond.com/demo/vendroid/img/avatar/big.jpg",
     },
     {
@@ -19,6 +20,7 @@ export const Person = [
       position: "ฝ่ายบริหาร",
       department: "การบริหาร",
       agency: "ฝ่ายบริหาร",
+      role: "Agency",
       image: "'https://www.venmond.com/demo/vendroid/img/avatar/big.jpg'",
     },
     {
@@ -30,6 +32,7 @@ export const Person = [
       position: "ผู้จัดการ",
       department: "การจัดการ",
       agency: "หัวหน้า",
+      role: "Admin",
       image: "'https://www.venmond.com/demo/vendroid/img/avatar/big.jpg'",
     },
   ];
