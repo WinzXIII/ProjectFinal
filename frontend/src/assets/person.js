@@ -1,0 +1,36 @@
+export const Person = [
+    {
+      id: 1,
+      empNumber: "ME1234",
+      gender: "นาง",
+      firstName: "มณีรัตน์",
+      lastName: "แสวงบุญ",
+      position: "พนักงาน",
+      department: "การบริหาร",
+      agency: "ฝ่ายบริหาร",
+      image: "https://www.venmond.com/demo/vendroid/img/avatar/big.jpg",
+    },
+    {
+      id: 2,
+      empNumber: "AE1234",
+      gender: "นาย",
+      firstName: "สมโชค",
+      lastName: "แสวงกำไร",
+      position: "ฝ่ายบริหาร",
+      department: "การบริหาร",
+      agency: "ฝ่ายบริหาร",
+      image: "'https://www.venmond.com/demo/vendroid/img/avatar/big.jpg'",
+    },
+    {
+      id: 3,
+      empNumber: "HR1234",
+      gender: "นาง",
+      firstName: "ราณี",
+      lastName: "แสวงนารี",
+      position: "ผู้จัดการ",
+      department: "การจัดการ",
+      agency: "หัวหน้า",
+      image: "'https://www.venmond.com/demo/vendroid/img/avatar/big.jpg'",
+    },
+  ];
+  
