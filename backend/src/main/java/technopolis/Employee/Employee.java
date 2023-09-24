@@ -1,67 +1,69 @@
-package technopolis.service.personal;
+package technopolis.Employee;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
-import jakarta.persistence.Table;
-import technopolis.service.users.User;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import technopolis.User.User;
 
 @Entity
-@Table(name = "personal")
-public class Personal {
+@Table(name = "employee")
+public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
+    @Column(name = "emp_id", unique = true, nullable = false)
     private Integer id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @Column(name = "emp_num", unique = true, nullable = false, length = 10)
+    private String empNumber;
+
+    @Column(name = "gender", nullable = false, length = 10)
+    private String gender;
+
+    @Column(name = "first_name", nullable = false, length = 50)
+    private String firstName;
+
+    @Column(name = "last_name", nullable = false, length = 50)
+    private String lastName;
+
+    @Column(name = "position", nullable = false, length = 50)
+    private String position;
+
+    @Column(name = "department", nullable = false, length = 50)
+    private String department;
+
+    @Column(name = "agency", nullable = false, length = 50)
+    private String agency;
+
+    @Column(name = "image", nullable = false, length = 255)
+    private String image;
+
+    @OneToOne()
     @JoinColumn(name = "user_id", referencedColumnName = "user_id", unique = true)
     private User user;
 
-    @Column(name = "employee_id", unique = true)
-    private String employeeId;
-
-    @Column(name = "gender")
-    private String gender;
-
-    @Column(name = "first_name")
-    private String firstName;
-
-    @Column(name = "last_name")
-    private String lastName;
-
-    @Column(name = "position")
-    private String position;
-
-    @Column(name = "department")
-    private String department;
-
-    @Column(name = "agency")
-    private String agency;
-
-    @Column(name = "image")
-    private String image;
+    private String manegerId;
 
     public Integer getId() {
-        return user.getId();
+        return id;
     }
 
-    public void setId(User user) {
-        this.user = user;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getEmployeeId() {
-        return employeeId = user.getUsername();
+    public String getEmpNumber() {
+        return empNumber;
     }
 
-    public void setEmployeeId(User user) {
-        this.user = user;
+    public void setEmpNumber(String empNumber) {
+        this.empNumber = empNumber;
     }
 
     public String getGender() {
@@ -76,16 +78,16 @@ public class Personal {
         return firstName;
     }
 
-    public void setFirstName(String firstname) {
-        this.firstName = firstname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastname) {
-        this.lastName = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getPosition() {
