@@ -1,82 +1,84 @@
 package technopolis.User;
 
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
+import java.util.Collection;
+import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
-import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import technopolis.Employee.Employee;
 
+import static jakarta.persistence.GenerationType.IDENTITY;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "user")
-public class User {
+public class User implements UserDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id", unique = true, nullable = false)
+    @GeneratedValue(strategy = IDENTITY)
     private Integer id;
-
-    @Column(name = "username", unique = true, nullable = false, length = 50)
+    
+    @Column(name = "username", unique = true)
     private String username;
-
-    @Column(name = "password", nullable = false, length = 64)
     private String password;
 
-    @Column(name = "role", length = 50)
-    private String role;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
-    @Column(name = "created_at", nullable = false)
-    private Timestamp createdAt;
-
-    @OneToOne(mappedBy = "user", cascade = CascadeType.REMOVE)
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Employee employee;
 
-    @PrePersist
-    protected void onCreate() {
-        this.createdAt = Timestamp.valueOf(LocalDateTime.now());
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority(role.name()));
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
+    @Override
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    @Override
+    public String getUsername() {
+        return username;
     }
 
-    public String getRole() {
-        return role;
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
     }
 
-    public Timestamp getCreatedAt() {
-        return createdAt;
-
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
     }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
 }
