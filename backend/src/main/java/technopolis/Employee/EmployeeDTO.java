@@ -18,5 +18,6 @@ public class EmployeeDTO {
     private String department;
     private String agency;
     private String image;
+    private String role;
 
 }

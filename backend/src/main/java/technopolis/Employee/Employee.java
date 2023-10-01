@@ -54,8 +54,11 @@ public class Employee {
     @Column(name = "image")
     private String image;
 
+    @Column(name = "role")
+    private String role;
+
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
-    
+
 }
