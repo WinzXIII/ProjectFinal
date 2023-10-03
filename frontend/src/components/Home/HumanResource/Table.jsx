@@ -1,5 +1,5 @@
 import React from "react";
-import plus from "C:/Users/thebi/Desktop/Projects/ProjectFinal/frontend/src/assets/emoji/plus.png";
+
 
 const Table = ({ data }) => {
   if (!data) {

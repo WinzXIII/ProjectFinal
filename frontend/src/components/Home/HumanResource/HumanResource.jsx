@@ -1,7 +1,7 @@
 // HumanResource.jsx
 import React, { useState } from "react";
 import "./HumanResource.scss";
-import searchImage from "C:/Users/thebi/Desktop/Projects/ProjectFinal/frontend/src/assets/emoji/search.png";
+// import searchImage from "C:/Users/thebi/Desktop/Projects/ProjectFinal/frontend/src/assets/emoji/search.png";
 import TableDatas from "./TableDatas"; 
 import Table from "./Table";
 
