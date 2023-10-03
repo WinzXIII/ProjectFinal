@@ -1,5 +1,5 @@
 import React from "react";
-import plus from "../../../assets/emoji/plus.png";
+import plus from "C:/Users/thebi/Desktop/Projects/ProjectFinal/frontend/src/assets/emoji/plus.png";
 
 const Table = ({ data }) => {
   if (!data) {
@@ -32,7 +32,7 @@ const Table = ({ data }) => {
           {headers.map((header) => (
             <th key={header}>{header}</th>
           ))}
-          <th>ตรวจสอบ</th>
+
         </tr>
       </thead>
       <tbody>
@@ -52,29 +52,6 @@ const Table = ({ data }) => {
                 {row[header]}
               </td>
             ))}
-            <td>
-              <button
-                style={{
-                  borderRadius: "20px",
-                  borderWidth: "thin",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: "2px",
-                  backgroundColor: isButtonClickable(row)
-                    ? "lime"
-                    : "grey", 
-                }}
-                disabled={!isButtonClickable(row)}
-              >
-                <img
-                  src={plus}
-                  alt="Plus"
-                  style={{ marginRight: "2px", width: "16px", height: "17px" }}
-                />
-                ตรวจสอบ
-              </button>
-            </td>
           </tr>
         ))}
       </tbody>

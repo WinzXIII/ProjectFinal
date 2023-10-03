@@ -1,7 +1,7 @@
 // Personnel.jsx
 import React, { useState } from "react";
 import "./Personnel.scss";
-import searchImage from "C:/Users/thebi/Desktop/Projects/ProjectFinal/frontend/src/assets/emoji/search.png";
+import searchImage from "../../../assets/emoji/search.png";
 import combinedTableData from "./combinedTableData"; 
 import Table from "./Table";
 
