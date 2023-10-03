@@ -1,3 +1,5 @@
+/* Form.scss */
+
 .form-container {
   width: 100%;
   height: auto;
@@ -21,4 +23,43 @@
       }
     }
   }
+}
+
+.form-main {
+  display: flex;
+  background-color: #d9d9d9;
+  width: 90%;
+  height: 90%;
+  flex-direction: column;
+  align-self: center;
+  border-radius: 15px;
+  padding: 20px; /* เพิ่ม padding สำหรับตาราง */
+}
+
+.data-table {
+  width: 100%;
+  border: 1px solid #ccc; /* เพิ่มเส้นขอบรอบตาราง */
+  border-collapse: collapse; /* เพื่อรวมขอบของเซลล์ */
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid #ccc; /* เพิ่มเส้นขอบรอบเซลล์ */
+  padding: 8px;
+  text-align: center;
+}
+
+/* เพิ่มสไตล์สำหรับหัวตาราง */
+.data-table th {
+  background-color: #f2f2f2;
+}
+
+/* เพิ่มสไตล์สำหรับแถวเลขคี่ */
+.data-table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+/* เพิ่มสไตล์สำหรับแถวเลขคู่ */
+.data-table tbody tr:nth-child(even) {
+  background-color: #ffffff;
 }

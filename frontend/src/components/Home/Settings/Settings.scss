@@ -22,3 +22,19 @@
     }
   }
 }
+
+.set-main {
+  display: flex;
+  background-color: #DEDEDE;
+  width: 90%;
+  height: 90%;
+  flex-direction: column;
+  align-self: center;
+  border-radius: 15px;
+  border-style: solid;
+}
+
+.ttable {
+  border: 1px solid;
+  border-radius: 15px;
+}
