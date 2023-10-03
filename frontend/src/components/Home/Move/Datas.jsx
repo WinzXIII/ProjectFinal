@@ -5,7 +5,7 @@ const departments = ["แผนกซื้อ", "แผนกขาย", "แ�
 const personsByDepartment = {
   "แผนกซื้อ": ["Person A", "Person B", "Person C"],
   "แผนกขาย": ["Person X", "Person Y", "Person Z"],
-  "แผนกนับ": ["Person I", "Person II", "Person III"],
+  "แผนกนับ": ["Person I", "ประยุท", "Person III"],
 };
 
 export { departments, personsByDepartment };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Move.scss";
-import { departments, personsByDepartment } from "./Datas"; // Import data from Datas.jsx
-import Options from "./Options"; // Import the Options component
+import { departments, personsByDepartment } from "./Datas"; 
+import Options from "./Options"; 
 
 const Move = () => {
   // State to keep track of the selected department
@@ -27,7 +27,6 @@ const Move = () => {
         </div>
         <div className="container">
           <div className="department-list">
-            <h2>Departments</h2>
             <ul>
               {departments.map((department) => (
                 <li
